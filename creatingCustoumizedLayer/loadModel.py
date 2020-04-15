@@ -6,6 +6,6 @@ from myLayer  import  MyLayer
 
 print("[INFO] myLayer loaded sucessfully")
 # load model
-model = load_model('model.h5')
+model = load_model('model.h5',  custom_objects={'MyLayer':MyLayer})
 # summarize model.
 model.summary()

@@ -8,11 +8,12 @@ from myLayer  import  MyLayer
 
 
 
-myLayer=MyLayer(12)
+#myLayer=MyLayer(12)
+
 model = Sequential()
 model.add(Dense(32, input_dim=784))
 model.add(Activation('relu'))     
-model.add(myLayer)   
+model.add(MyLayer(output_dim=5))    
 model.add(Dense(1, activation='sigmoid'))
 
 model.summary()

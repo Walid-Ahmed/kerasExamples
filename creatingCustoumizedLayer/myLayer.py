@@ -6,7 +6,7 @@ from keras.layers import Dense, Activation
 
 class MyLayer(Layer):
 
-    def __init__(self, output_dim, **kwargs):
+    def __init__(self, output_dim=12, **kwargs):
         self.output_dim = output_dim
         super(MyLayer, self).__init__(**kwargs)
 
@@ -23,3 +23,12 @@ class MyLayer(Layer):
 
     def compute_output_shape(self, input_shape):
         return (input_shape[0], self.output_dim)
+
+
+    def get_config(self):
+      config = {
+      'output_dim': self.output_dim
+      }
+      base_config = super(MyLayer, self).get_config()
+      return dict(list(base_config.items()) + list(config.items()))
+
