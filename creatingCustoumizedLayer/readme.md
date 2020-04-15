@@ -5,6 +5,8 @@
 
 ## Usage
 
+Layer is defined as class MyLayer(Layer) in mylayer.py script
+
 
 
 python buildModel.py. # build a model with a customized layer and save to  model.h5
