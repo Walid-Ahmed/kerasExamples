@@ -9,7 +9,6 @@ from tensorflow.keras.layers import Input, Dense,  GlobalAveragePooling2D
 from tensorflow.keras.layers import MaxPooling2D, Activation
 '''
 
-
 from keras.layers import Conv2D
 from keras.models import Model
 from keras.layers import Input, Dense,  GlobalAveragePooling2D
