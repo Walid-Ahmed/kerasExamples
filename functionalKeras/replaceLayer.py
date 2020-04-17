@@ -57,6 +57,8 @@ def replace_intermediate_layer_in_keras(model, layer_id, new_layer):
 if __name__ == '__main__':
 	model = keras_simple_model()
 	model.summary()
+	numOfParmeters=model.count_params()
+	print("[INFO] The total number  of parmeters in model is {}".format(numOfParmeters))
 
 	plotFileName="modelBeforeLayerReplacement.png"
 	from keras.utils import plot_model
@@ -65,6 +67,9 @@ if __name__ == '__main__':
 	new_layer= Conv2D(4, (3, 3), activation=None, padding='same', name='conv2_repl', use_bias=False)
 	model = replace_intermediate_layer_in_keras(model, 3,new_layer)
 	model.summary()
+	numOfParmeters=model.count_params()
+	print("[INFO] The total number  of parmeters in model is {}".format(numOfParmeters))
+
 
 
 
@@ -81,6 +86,8 @@ if __name__ == '__main__':
 	new_layer=Lambda(lambda x: x * 1)
 	model = replace_intermediate_layer_in_keras(model, 3,new_layer)
 	model.summary()
+	numOfParmeters=model.count_params()
+	print("[INFO] The total number  of parmeters in model is {}".format(numOfParmeters))
 
 
 
