@@ -13,7 +13,7 @@ from tensorflow.keras.layers import MaxPooling2D, Activation
 from keras.layers import Conv2D
 from keras.models import Model
 from keras.layers import Input, Dense,  GlobalAveragePooling2D
-from keras.layers import MaxPooling2D, Activation
+from keras.layers import MaxPooling2D, Activation,Lambda
 
 
 def keras_simple_model():
@@ -67,6 +67,23 @@ if __name__ == '__main__':
 	model.summary()
 
 
-	plotFileName="modelAfterLayerReplacement.png"
+
+
+
+
+	plotFileName="modelAfterLayerReplacement1.png"
+	from keras.utils import plot_model
+	plot_model(model, to_file=plotFileName ,show_shapes=True)
+
+
+
+	#new_layer=Lambda(lambda x: x)
+	new_layer=Lambda(lambda x: x * 1)
+	model = replace_intermediate_layer_in_keras(model, 3,new_layer)
+	model.summary()
+
+
+
+	plotFileName="modelAfterLayerReplacement2.png"
 	from keras.utils import plot_model
 	plot_model(model, to_file=plotFileName ,show_shapes=True)
