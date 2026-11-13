@@ -1,0 +1,4 @@
+keras>=3.0
+tensorflow>=2.16
+numpy
+pydot  # optional, for plot_model (also needs Graphviz)

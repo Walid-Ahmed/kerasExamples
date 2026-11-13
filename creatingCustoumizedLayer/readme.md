@@ -1,14 +1,15 @@
-<h1>Sample code to build  your own  keras layer and use it in your  model</h1>
+# Building your own Keras layer
 
-
-
+`MyLayer` in [`myLayer.py`](myLayer.py) is a custom trainable layer that computes `y = x @ kernel`.
 
 ## Usage
 
-Layer is defined as class MyLayer(Layer) in mylayer.py script
+```bash
+python buildModel.py   # build a model that uses MyLayer and save it to model.keras
+```
 
+```bash
+python loadModel.py    # load model.keras, custom layer included, and run a prediction
+```
 
-
-python buildModel.py. # build a model with a customized layer and save to  model.h5
-
-python loadModel.py.  # load  the model with a customized layer from file model.h5
+See the [main README](../README.md#creating-a-custom-layer) for how the layer is written.
